@@ -1,4 +1,3 @@
-
 /**
  * 複素数（固定値）
  */
@@ -30,6 +29,7 @@ function drawCalcComplex() {
   const addComplex = fixComplex.add(moveComplex);
   const subComplex = fixComplex.sub(moveComplex);
   const mulComplex = fixComplex.mul(moveComplex);
+  const divComplex = fixComplex.div(moveComplex);
 
   // 計算結果の描画
   const mainPointRadius = 20;
@@ -49,6 +49,9 @@ function drawCalcComplex() {
   fill(255, 0, 255);
   drawPoint(mulComplex.re, mulComplex.im, calcPointRadius);
   circle(24, 128, calcPointRadius);
+  fill(0, 255, 255);
+  drawPoint(divComplex.re, divComplex.im, calcPointRadius);
+  circle(24, 154, calcPointRadius);
 }
 
 /**
@@ -75,4 +78,5 @@ function draw() {
   text(`A + B`, 40, 82);
   text(`A - B`, 40, 108);
   text(`A × B`, 40, 134);
+  text(`A / B`, 40, 160);
 }

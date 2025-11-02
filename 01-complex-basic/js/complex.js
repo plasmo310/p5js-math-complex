@@ -29,6 +29,14 @@ class Complex {
     );
   }
 
+  static div(z0, z1) {
+    const denom = z1.re ** 2 + z1.im ** 2;
+    return new Complex(
+      (z0.re * z1.re + z0.im * z1.im) / denom,
+      (z0.im * z1.re - z0.re * z1.im) / denom
+    );
+  }
+
   add(z1) {
     return Complex.add(this, z1);
   }
@@ -39,6 +47,10 @@ class Complex {
 
   mul(z1) {
     return Complex.mul(this, z1);
+  }
+
+  div(z1) {
+    return Complex.div(this, z1);
   }
 
   sqlMagnitude() {
